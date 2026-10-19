@@ -7,7 +7,7 @@ var score: int = 0
 
 func _ready() -> void:
 	# Affiche les commandes
-	$HUD/ControlsLabel.text = "Déplacement :\n[indent]Haut : %s\nBas : %s\nGauche : %s\nDroite : %s[/indent]\nChanger de skin : %s" % [
+	$HUD/ControlsLabel.text = "Déplacement :\n[indent]Haut : %s\nBas : %s\nGauche : %s\nDroite : %s[/indent]" % [
 		get_action_keys("move_up"),
 		get_action_keys("move_down"),
 		get_action_keys("move_left"),
