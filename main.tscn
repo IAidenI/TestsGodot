@@ -38,6 +38,7 @@ shape = SubResource("WorldBoundaryShape2D_evcbc")
 
 [node name="Player" parent="." unique_id=213820264 instance=ExtResource("1_ig7tw")]
 position = Vector2(152, 165)
+speed = null
 
 [node name="Coin" parent="." unique_id=1895724785 instance=ExtResource("2_0xm2m")]
 position = Vector2(934, 489)

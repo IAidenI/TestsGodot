@@ -1,0 +1,12 @@
+# Vérifie et formate le GDScript automatiquement avant chaque commit.
+# Installation (une fois par personne) :
+#   pip install pre-commit "gdtoolkit==4.*"
+#   pre-commit install
+#   pre-commit autoupdate
+
+repos:
+  - repo: https://github.com/Scony/godot-gdscript-toolkit
+    rev: 4.5.0
+    hooks:
+      - id: gdformat   # reformate les .gd
+      - id: gdlint     # vérifie le nommage et le style
