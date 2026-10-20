@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4mhgh4iu1xr5" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bhbkpsiusl0wv" path="res://player/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://46glmb8vhu72" path="res://Coin/coin.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://46glmb8vhu72" path="res://coin/coin.tscn" id="2_0xm2m"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h2yge"]
 normal = Vector2(0, 1)
@@ -38,7 +38,6 @@ shape = SubResource("WorldBoundaryShape2D_evcbc")
 
 [node name="Player" parent="." unique_id=213820264 instance=ExtResource("1_ig7tw")]
 position = Vector2(152, 165)
-speed = null
 
 [node name="Coin" parent="." unique_id=1895724785 instance=ExtResource("2_0xm2m")]
 position = Vector2(934, 489)
