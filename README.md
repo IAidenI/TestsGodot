@@ -6,27 +6,7 @@ pre-commit install
 
 # Organisation du projet
 
-Rangement **par élément** : chaque entitées a son dossier avec sa scène, son script et ses assets. On ne cherche pas à 3 endroits pour modifier un élément. AAA
-
-```
-res://
-├── addons/                  # Plugins tiers (ne pas modifier)
-├── autoloads/               # Singletons globaux (le moins possible)
-│   ├── game_manager.gd      # État de la partie, run en cours
-│   ├── save_manager.gd      # Sauvegarde / chargement
-│   └── audio_manager.gd     # Musique et sons globaux
-├── characters/
-│   ├── player/
-│   │   ├── player.tscn
-│   │   ├── player.gd
-│   │   └── player_sheet.png
-│   └── enemies/
-│       ├── enemy.gd         # Classe de base des ennemis
-│       └── slime/
-│           ├── slime.tscn
-│           ├── slime.gd
-│           └── slime_sheet.png
-├── components/              # Briques réutilisables (vie, hitbox…)
+Rangement **par élé
 │   ├── health_component/
 │   ├── hitbox_component/
 │   └── hurtbox_component/
