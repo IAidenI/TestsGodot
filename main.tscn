@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dycyv1oekbmnd"]
+[gd_scene format=3 uid="uid://dycyv1oekbmnd"]
 
 [ext_resource type="Script" uid="uid://4mhgh4iu1xr5" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bhbkpsiusl0wv" path="res://player/player.tscn" id="1_ig7tw"]
@@ -15,49 +15,49 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_evcbc"]
 normal = Vector2(-1, 0)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=20675664]
 script = ExtResource("1_h2yge")
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=947805978]
 
-[node name="Haut" type="CollisionShape2D" parent="Walls"]
+[node name="Haut" type="CollisionShape2D" parent="Walls" unique_id=1756408222]
 position = Vector2(576, 0)
 shape = SubResource("WorldBoundaryShape2D_h2yge")
 
-[node name="Bas" type="CollisionShape2D" parent="Walls"]
+[node name="Bas" type="CollisionShape2D" parent="Walls" unique_id=175147434]
 position = Vector2(576, 648)
 shape = SubResource("WorldBoundaryShape2D_1bvp3")
 
-[node name="Gauche" type="CollisionShape2D" parent="Walls"]
+[node name="Gauche" type="CollisionShape2D" parent="Walls" unique_id=1521311112]
 position = Vector2(0, 324)
 shape = SubResource("WorldBoundaryShape2D_lquwl")
 
-[node name="Droite" type="CollisionShape2D" parent="Walls"]
+[node name="Droite" type="CollisionShape2D" parent="Walls" unique_id=2116569383]
 position = Vector2(1152, 324)
 shape = SubResource("WorldBoundaryShape2D_evcbc")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." unique_id=1042844275 instance=ExtResource("1_ig7tw")]
 position = Vector2(152, 165)
 speed = null
 
-[node name="Coin" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Coin" parent="." unique_id=1147432066 instance=ExtResource("2_0xm2m")]
 position = Vector2(934, 489)
 
-[node name="Coin2" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Coin2" parent="." unique_id=1370405365 instance=ExtResource("2_0xm2m")]
 position = Vector2(592, 556)
 
-[node name="Coin3" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Coin3" parent="." unique_id=778467404 instance=ExtResource("2_0xm2m")]
 position = Vector2(780, 122)
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=341129400]
 
-[node name="ScoreLabel" type="Label" parent="HUD"]
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=464767574]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 32
 text = "Score : 0"
 
-[node name="ControlsLabel" type="RichTextLabel" parent="HUD"]
+[node name="ControlsLabel" type="RichTextLabel" parent="HUD" unique_id=1720915920]
 offset_top = 56.0
 offset_right = 97.0
 offset_bottom = 105.0
