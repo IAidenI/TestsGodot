@@ -10,43 +10,89 @@ Rangement **par élément** : chaque entitées a son dossier avec sa scène, son
 
 ```
 res://
-├── addons/                  # Plugins tiers (ne pas modifier)
-├── autoloads/               # Singletons globaux (le moins possible)
-│   ├── game_manager.gd      # État de la partie, run en cours
-│   ├── save_manager.gd      # Sauvegarde / chargement
-│   └── audio_manager.gd     # Musique et sons globaux
+├── addons/                     # Plugins tiers (jamais modifiés à la main)
+│
+├── autoloads/                  # Singletons globaux, le strict minimum
+│   ├── game_manager.gd         # État global : run en cours, planète actuelle
+│   ├── save_manager.gd         # Sauvegarde / chargement (user://)
+│   ├── audio_manager.gd        # Musique et sons globaux
+│   └── events.gd               # Bus d'événements : signaux globaux (player_died, planet_cleared…)
+│
+├── components/                 # Briques réutilisables par plusieurs entités
+│   ├── health/                 # health_component.tscn / .gd
+│   ├── hitbox/                 # Ce qui inflige des dégâts
+│   ├── hurtbox/                # Ce qui reçoit des dégâts
+│   └── state_machine/          # state_machine.gd + state.gd (classes de base)
+│
 ├── characters/
 │   ├── player/
 │   │   ├── player.tscn
 │   │   ├── player.gd
-│   │   └── player_sheet.png
-│   └── enemies/
-│       ├── enemy.gd         # Classe de base des ennemis
-│       └── slime/
-│           ├── slime.tscn
-│           ├── slime.gd
-│           └── slime_sheet.png
-├── components/              # Briques réutilisables (vie, hitbox…)
-│   ├── health_component/
-│   ├── hitbox_component/
-│   └── hurtbox_component/
-├── items/                   # Objets, armes, pickups
-├── levels/
-│   ├── generation/          # Code de génération procédurale
-│   ├── rooms/               # Salles préfabriquées
-│   └── biomes/              # Tilesets et réglages par type de planète
+│   │   ├── states/             # idle.gd, run.gd, jump.gd, fall.gd, dead.gd
+│   │   └── sprites/
+│   ├── enemies/
+│   │   ├── enemy.gd            # Classe de base des ennemis
+│   │   └── slime/
+│   │       ├── slime.tscn
+│   │       ├── slime.gd
+│   │       ├── states/
+│   │       └── sprites/
+│   └── bosses/
+│       └── final_boss/
+│
+├── items/
+│   ├── pickups/                # Pièces, soins, munitions
+│   ├── weapons/
+│   └── projectiles/
+│
+├── world/
+│   ├── generation/             # planet_generator.gd, room_placer.gd
+│   ├── rooms/                  # Salles préfabriquées, rangées par biome
+│   │   ├── common/
+│   │   ├── ice/
+│   │   └── lava/
+│   ├── biomes/                 # Tilesets + réglages de chaque type de planète
+│   │   ├── ice/
+│   │   └── lava/
+│   └── props/                  # Portes, coffres, terminaux et objets de lore
+│
 ├── ui/
 │   ├── hud/
-│   ├── menus/
-│   └── touch_controls/
-├── data/                    # Ressources de données (.tres) : stats, loot tables, dialogues
-├── shared/                  # Assets utilisés partout
+│   ├── menus/                  # main_menu/, pause_menu/, settings_menu/, game_over/
+│   ├── touch_controls/         # Joystick virtuel, boutons
+│   ├── widgets/                # Petits éléments d'UI réutilisables (bouton stylé, barre de vie…)
+│   └── themes/                 # Thèmes d'UI (.tres)
+│
+├── data/                       # Données de jeu en Resources : on équilibre sans toucher au code
+│   ├── survivors/              # survivor_data.gd + un .tres par survivant
+│   ├── enemies/                # Stats des ennemis
+│   ├── items/                  # Stats des objets et armes
+│   ├── biomes/                 # Paramètres de génération par biome
+│   └── lore/                   # Les indices de lore (textes, conditions d'apparition)
+│
+├── utils/                      # Fonctions static et constantes utilisées partout
+│   ├── constants.gd
+│   └── math_utils.gd
+│
+├── shared/                     # Assets utilisés par plusieurs éléments
 │   ├── fonts/
-│   ├── sfx/
 │   ├── music/
-│   └── shaders/
-├── main.tscn                # Point d'entrée : charge les menus et les niveaux
-└── main.gd
+│   ├── sfx/
+│   ├── shaders/
+│   └── vfx/                    # Particules, effets réutilisables
+│
+├── main.tscn                   # Point d'entrée : menus, chargement des planètes, transitions
+├── main.gd
+│
+├── docs/                       # .gdignore : ignoré par Godot
+├── art_sources/                # .gdignore : fichiers .aseprite, .psd, .kra
+├── tests/                      # Tests (GUT ou gdUnit4)
+│
+├── project.godot
+├── export_presets.cfg
+├── icon.svg
+├── README.md
+└── (fichiers de config : .gitignore, .gitattributes, .editorconfig, .pre-commit-config.yaml)
 ```
 
 **Règles**
