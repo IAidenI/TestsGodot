@@ -7,7 +7,7 @@ pre-commit install
 # Organisation du projet
 
 Rangement **par élément** : chaque entitées a son dossier avec sa scène, son script et ses assets. On ne cherche pas à 3 endroits pour modifier un élément.
-AHAHAHA
+AHAHAHA.
 
 
 ```
