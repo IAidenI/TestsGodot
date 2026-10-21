@@ -61,7 +61,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
-radius = 55.00909
+radius = 82.05486
 
 [node name="Player" type="CharacterBody2D" unique_id=213820264]
 script = ExtResource("1_rkbax")

@@ -19,7 +19,7 @@ func _ready() -> void:
 	)
 
 	# Centre le joueur à l'écran
-	$Player.position = get_viewport_rect().size / 2
+	#$Player.position = get_viewport_rect().size / 2
 
 	# Parcourt tous les enfants directs de Main pour trouver les pièces
 	for child in get_children():
