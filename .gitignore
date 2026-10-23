@@ -3,9 +3,9 @@
 builds/
 *.exe
 *.apk
+*.idsig
 *.aab
 *.pck
 *.zip
 .DS_Store
 Thumbs.db
-brainstorming/perso.md

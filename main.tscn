@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://46glmb8vhu72" path="res://coin/coin.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://y8d2wmvqya8q" path="res://levels/Tileset.png" id="2_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bfikg6lf5yco1" path="res://levels/sol_vert_sheet.png" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://c0wxyyihv8ygd" path="res://mobile-controls-1/Sprites/Style C/Default/dpad_element_east.png" id="6_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dpv45sjbqomtk" path="res://mobile-controls-1/Sprites/Style C/Default/dpad_element_west.png" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://dgcldsmd3ms3y" path="res://mobile-controls-1/Sprites/Style C/Default/dpad_element_south.png" id="8_4c57u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("2_lquwl")
@@ -471,11 +474,11 @@ tile_set = SubResource("TileSet_s51rp")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=985588128]
 
-[node name="Gauche" type="CollisionShape2D" parent="Walls" unique_id=1762206664]
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=1762206664]
 position = Vector2(0, 324)
 shape = SubResource("WorldBoundaryShape2D_lquwl")
 
-[node name="Droite" type="CollisionShape2D" parent="Walls" unique_id=1677464330]
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=1677464330]
 position = Vector2(1152, 324)
 shape = SubResource("WorldBoundaryShape2D_evcbc")
 
@@ -509,3 +512,24 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 tab_stops = PackedFloat32Array(32)
+
+[node name="TouchScreenBtnLeft" type="TouchScreenButton" parent="HUD" unique_id=1021342501]
+position = Vector2(40, 540)
+texture_normal = ExtResource("6_5vw27")
+passby_press = true
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenBtnRight" type="TouchScreenButton" parent="HUD" unique_id=1704110606]
+position = Vector2(170, 540)
+texture_normal = ExtResource("7_kek77")
+passby_press = true
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenBtnJump" type="TouchScreenButton" parent="HUD" unique_id=1375125367]
+position = Vector2(1020, 540)
+texture_normal = ExtResource("8_4c57u")
+passby_press = true
+action = "jump"
+visibility_mode = 1
