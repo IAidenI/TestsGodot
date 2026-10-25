@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 		else:
 			is_jumping = false
+
 	# Mouvements
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
